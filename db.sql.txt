@@ -1,0 +1,27 @@
+-- Table: public.tutorials
+
+-- DROP TABLE IF EXISTS public.tutorials;
+
+CREATE TABLE IF NOT EXISTS public.tutorials
+(
+    id bigint NOT NULL,
+    description character varying(255) COLLATE pg_catalog."default",
+    published boolean,
+    title character varying(255) COLLATE pg_catalog."default",
+    CONSTRAINT tutorials_pkey PRIMARY KEY (id)
+)
+
+
+-- Table: public.json_journal
+
+-- DROP TABLE IF EXISTS public.json_journal;
+
+CREATE TABLE IF NOT EXISTS public.json_journal
+(
+    id integer NOT NULL,
+    json_code character varying(50) COLLATE pg_catalog."default",
+    json_text jsonb,
+    CONSTRAINT json_journal_pkey PRIMARY KEY (id)
+)
+
+TABLESPACE pg_default;
