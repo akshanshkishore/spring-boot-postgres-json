@@ -1,0 +1,23 @@
+import org.postgresql.util.PGobject;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+
+public class DataConvertorUtil {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		try {
+			System.out.println(convertStringToJsonb("{\"name\":\"name\"}"));
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	public static PGobject convertStringToJsonb(String jsonString) throws Exception {
+	    PGobject pgObject = new PGobject();
+	    pgObject.setType("jsonb");
+	    pgObject.setValue(jsonString);
+	    return pgObject;
+	}
+}
